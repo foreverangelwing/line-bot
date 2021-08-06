@@ -42,8 +42,14 @@ def handle_message(event):
     'UR-870':'https://bit.ly/3Aio1Yz'
     }
     msg = event.message.text
-    
     r = '很抱歉，我不懂您在說什麼？'
+
+    if msg in pd:
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=pd))
+
+        return
 
     if '給我貼圖' in msg:
         sticker_message = StickerSendMessage(
@@ -65,8 +71,6 @@ def handle_message(event):
         r = '我是機器人'
     elif '訂位' in msg:
         r = '您想訂位，是嗎？'
-    elif msg in pd:
-        r = srt(pd)
 
     line_bot_api.reply_message(
         event.reply_token,
