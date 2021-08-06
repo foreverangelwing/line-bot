@@ -42,8 +42,8 @@ def handle_message(event):
 
     if msg in ['UR-515', 'UR515', 'ur515', 'ur-515']:
         image_message = ImageSendMessage(
-        original_content_url='https://www.dropbox.com/s/a4f9wy74wjy0yni/1.jpg?dl=0',
-        preview_image_url='https://www.dropbox.com/s/a4f9wy74wjy0yni/1.jpg?dl=0'
+        original_content_url='https://bit.ly/3ywwqqT',
+        preview_image_url='https://bit.ly/3ywwqqT'
     )
         line_bot_api.reply_message(
         event.reply_token,
