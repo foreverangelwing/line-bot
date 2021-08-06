@@ -37,6 +37,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    pd = {
+    'UR-515':'https://bit.ly/3fEkpIw'
+    }
     msg = event.message.text
     r = '很抱歉，我不懂您在說什麼？'
 
@@ -60,8 +63,8 @@ def handle_message(event):
         r = '我是機器人'
     elif '訂位' in msg:
         r = '您想訂位，是嗎？'
-    elif msg in ['ur515', 'UR-515', 'ur-515', 'UR515']:
-        r = 'https://bit.ly/3fEkpIw'
+    elif msg in pd:
+        r = print(pd)
 
     line_bot_api.reply_message(
         event.reply_token,
