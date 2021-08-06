@@ -40,18 +40,6 @@ def handle_message(event):
     msg = event.message.text
     r = '很抱歉，我不懂您在說什麼？'
 
-    if msg in ['UR-515', 'UR515', 'ur515', 'ur-515']:
-        image_message = ImageSendMessage(
-        original_content_url='https://bit.ly/3fEkpIw',
-        preview_image_url='https://bit.ly/3fEkpIw'
-    )
-        line_bot_api.reply_message(
-        event.reply_token,
-        image_message)
-
-        return
-
-
     if '給我貼圖' in msg:
         sticker_message = StickerSendMessage(
         package_id='446',
@@ -72,6 +60,8 @@ def handle_message(event):
         r = '我是機器人'
     elif '訂位' in msg:
         r = '您想訂位，是嗎？'
+    elif msg in ['ur515', 'UR-515', 'ur-515', 'UR515']:
+        r = 'https://bit.ly/3fEkpIw'
 
     line_bot_api.reply_message(
         event.reply_token,
