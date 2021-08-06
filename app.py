@@ -45,7 +45,7 @@ def handle_message(event):
         original_content_url='https://www.dropbox.com/s/a4f9wy74wjy0yni/1.jpg?dl=0',
         preview_image_url='https://www.dropbox.com/s/a4f9wy74wjy0yni/1.jpg?dl=0'
     )
-          line_bot_api.reply_message(
+        line_bot_api.reply_message(
         event.reply_token,
         image_message)
 
