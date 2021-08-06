@@ -38,12 +38,12 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     pd = {
-    'UR-515':'https://bit.ly/3fEkpIw',
-    'UR-870':'https://bit.ly/3Aio1Yz'
+    'UR-515': 'https://bit.ly/3fEkpIw',
+    'UR-870': 'https://bit.ly/3Aio1Yz'
     }
     msg = event.message.text
     r = '很抱歉，我不懂您在說什麼？'
-
+    
     if '給我貼圖' in msg:
         sticker_message = StickerSendMessage(
         package_id='446',
@@ -64,7 +64,7 @@ def handle_message(event):
         r = '我是機器人'
     elif '訂位' in msg:
         r = '您想訂位，是嗎？'
-    elif pd in msg:
+    elif msg in pd:
         r = pd
 
 
